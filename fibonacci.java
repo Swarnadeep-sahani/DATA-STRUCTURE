@@ -1,19 +1,22 @@
-// fibonacci series using dynamic programming
-
-public class fibonacci {  
-    int fibo(int n) {
-        int[] cache = new int[n+1];
-        cache[0] = 0;
-        cache[1] = 1;
-
+//import java.util.*;
+public class fibonacci {
+    
+    static int fib(int n)
+    {
+        int a = 0, b = 1, c;
+        if (n == 0)
+            return a;
         for (int i = 2; i <= n; i++) {
-            cache[i] = cache[i-1] + cache[i-2];
+            c = a + b;
+            a = b;
+            b = c;
         }
-
-        return cache[n];
+        return b;
     }
-
-    public static void main(String[] args) {
-        System.out.println(new fibonacci().fibo(3));
+ 
+    public static void main(String args[])
+    {
+        int n = 9;
+        System.out.println(fib(n));
     }
 }

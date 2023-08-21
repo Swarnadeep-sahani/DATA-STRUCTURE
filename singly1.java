@@ -21,6 +21,17 @@ class singly1{
         }
         System.out.print("null");
      }
+     public Listnode reverse(Listnode head){
+      Listnode newHead=null;
+      while (head!=null) {
+          Listnode next=head.next;
+          head.next=newHead;
+          newHead=head;
+          head=next;
+      }
+      return newHead;
+  }
+     
     public static void main(String[] args) {
         singly1 sll=new singly1();
         sll.head=new listNode(10);
